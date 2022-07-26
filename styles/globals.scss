@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'brooklyn';
+  src: url('../public/Brooklyn-Bold.ttf') format('opentype'),
+       url('../public/Brooklyn-Bold.woff') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+
+};
+
+
+@font-face {
+  font-family: "Starduster Title Italic";
+  src: url("../public/stardustertitleital.woff") format("woff"),
+       url("../public/stardustertitleital.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'brooklyn';
+  src: url('../public/Brooklyn-Bold.ttf') format('opentype'),
+       url('../public/Brooklyn-Bold.woff') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+
+};
+
+@font-face {
+  font-family: 'brooklyn';
+  src: url('../public/Brooklyn-Heavy.ttf') format('opentype'),
+       url('../public/Brooklyn-Heavy.woff') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+
+};
+
+@font-face {
+  font-family: 'brooklyn';
+  src: url('../public/Brooklyn-Normal.ttf') format('opentype'),
+       url('../public/Brooklyn-Normal.woff') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+
+};
+
+@font-face {
+  font-family: 'brooklyn';
+  src: url('../public/Brooklyn-SemiBold.ttf') format('opentype'),
+       url('../public/Brooklyn-SemiBold.woff') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+};
+
+
+
+html{
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scroll-behavior: smooth;
+}
+
+body,*{
+  font-family: "brooklyn";
+}
