@@ -24,7 +24,22 @@ import RightArrow from "../public/right_arrow.svg";
 
 const slides = [
 
-
+  {
+    banner: YaleaBanner,
+    Logo: YaleaLogo,
+  },
+  {
+    banner: PoliceBanner,
+    Logo: PoliceLogo,
+  },
+  {
+    banner: JohnBanner,
+    Logo: JohnLogo,
+  },
+  {
+    banner: LuckyBanner,
+    Logo: LuckyLogo,
+  }
 
 ]
 
