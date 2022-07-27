@@ -7,12 +7,12 @@ import HeroWithSlider from '../components/HeroWithSlider'
 import {AppContext} from "../helpers/Context";
 
 
-export default function Home({texts}) {
+export default function Home({texts,server}) {
 
   const [contentPage, setContentPage] = useContext(AppContext);
 
   useEffect(() => {    
-
+    console.log(server);
     const actualSettings = {texts}
     if(typeof window !== "undefined"){
 
@@ -52,9 +52,10 @@ export const getServerSideProps = async (ctx) => {
 
   const dev = process.env.NODE_ENV !== 'production';
   let textObject;
+  let server;
 
   try {  
-    const server = dev ? 'http://localhost:3000' : ctx.req.headers.referer;
+    server = dev ? 'http://localhost:3000' : ctx.req.headers.referer;
     const req = await fetch(server + "/settings.json");
     const res = await req.json();
     const {texts} = res;
@@ -69,7 +70,8 @@ export const getServerSideProps = async (ctx) => {
   }
   return {
     props:{
-      texts: textObject
+      texts: textObject,
+      server
     }
   }
 }
