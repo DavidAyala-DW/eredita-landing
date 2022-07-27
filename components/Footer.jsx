@@ -2,14 +2,14 @@ import React from 'react'
 import LogoSpeers from "../public/speers.svg";
 import Bar from "../public/_.svg";
 import Eredita from "../public/eredita.svg";
-import Cineplex from "../public/cineplex.svg";
+import Cineplex from "../public/footer_mobile.svg"
 
 function Footer() {
   return (
     
-    <footer className="w-full bg-primary pt-20 pb-8 pl-24 pr-16 flex flex-col">
+    <footer className="w-full bg-primary pt-[66px] pl-[46px] md:pt-20 md:pb-8 md:pl-24 md:pr-16 flex flex-col">
 
-      <div className="w-full flex space-x-20 pb-20">
+      <div className="w-full flex flex-col space-y-12 md:space-y-0 md:flex-row md:space-x-20 pb-20">
 
         <div className="flex flex-col">
 
@@ -77,9 +77,9 @@ function Footer() {
 
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-center justify-between">
 
-        <div className="flex items-center space-x-5">
+        <div className="flex flex-col space-y-2.5 md:space-y-0 md:flex-row md:items-center md:space-x-5">
 
           <h3 className="text-white font-normal text-xs leading-9">
             © 2022 Eredità Eyewear Group Inc. | Website & Marketing by :

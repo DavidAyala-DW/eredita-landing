@@ -16,15 +16,18 @@ import Quality from "../public/Acetate.svg";
 import Aesthetics from "../public/BoldAesthetics.svg";
 import Film from "../public/Film.svg";
 
+import Glass from "../public/VPLE37.png";
+import Badge from "../public/badge_featured.png";
+
 function HeroWithSlider() {
 
   const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
 
   return (
 
-    <section className="w-full xl:max-w-[85%] xl:mx-auto flex flex-col pt-20">
+    <section className="w-full md2:px-5 xl:px-0 xl:max-w-[85%] xl:mx-auto flex flex-col md:pt-20 pb-16">
 
-      <div className="w-full grid grid-cols-[57.6%_42.4%] gap-x-10">
+      <div className="w-full flex flex-col md2:grid grid-cols-[57.8%_39.3%] gap-x-10">
 
         <div className="relative h-auto w-full">
 
@@ -33,19 +36,41 @@ function HeroWithSlider() {
             alt="Alt text"
             layout="responsive"
             quality={100}
+            priority={true}
           />
+
+          <div className="absolute max-w-[87%] bottom-[16.6%] left-[6.5%]">
+            <Image
+              src={Glass}
+              alt="Alt"
+              layout="intrinsic"
+              quality={100}
+              priority={true}
+              className="z-[3]"
+            />
+          </div>
+
+          <div className="absolute max-w-[24.2%] left-[24%] md:left-[unset] md:right-[18%] bottom-[50%] md:bottom-[39%] z-[4] md:z-[2]">
+            <Image
+              src={Badge}
+              alt="Alt"
+              layout="intrinsic"
+              quality={100}
+              priority={true}
+            />
+          </div>
 
         </div>
 
         <div className="flex flex-col h-auto">
 
-          <div className="pl-[26px] w-full">
+          <div className="px-5 md:pr-[0] md:pl-[26px] w-full">
 
             <h2 className="text-black tracking-[0.145em] leading-[22px] text-lg uppercase font-bold mb-2">
               police lifestyle
             </h2>
 
-            <h1 className="max-w-[354px] italic w-full  tracking-[-0.1em] leading-[56px] text-[60px] font-normal font-starduster text-primary uppercase mb-2">
+            <h1 className="max-w-[354px] italic w-full  tracking-[-0.1em] lg:leading-[56px] leading-[36px] text-[40px] lg:text-[60px] font-normal font-starduster text-primary uppercase mb-2">
               origins bullet 1
             </h1>
 
@@ -96,7 +121,7 @@ function HeroWithSlider() {
 
             </div>
 
-            <div className="w-full py-[15.5px] px-[74px] border border-[#0A0B0E] mb-4">
+            <div className="w-full py-[15.5px] px-[74px] border border-[#0A0B0E] mb-4 cursor-pointer">
 
               <div className="flex items-center space-x-2 max-w-max mx-auto">
 
@@ -110,7 +135,7 @@ function HeroWithSlider() {
 
             </div>
 
-            <div className="w-full py-[15.5px] px-[74px] border border-secondary bg-secondary mb-[30px]">
+            <div className="w-full py-[15.5px] px-[74px] border border-secondary bg-secondary mb-[30px] cursor-pointer">
               <p className="font-semibold text-sm leading-5 tracking-[0.045em] uppercase text-center text-[#0A0B0E]">BUY NOW</p>
             </div>
 

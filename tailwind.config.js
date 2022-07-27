@@ -10,6 +10,10 @@ module.exports = {
         "primary": "#001C71",
         "secondary": "#FFCB05"
       },
+      backgroundImage: {
+        'brands-left': "linear-gradient(90deg, rgba(19, 19, 19, 0.8) 0%, rgba(0, 0, 0, 0) 86.05%)",
+        "brands-right": "linear-gradient(90deg, rgba(19, 19, 19, 0.8) 0%, rgba(0, 0, 0, 0) 86.05%)"
+      },
       fontFamily:{
         "starduster": ["Starduster Title Italic"]
       },
