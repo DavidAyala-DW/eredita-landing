@@ -1,10 +1,15 @@
 import React from 'react'
+import {AppContext} from "../helpers/Context";
+import { useContext, useEffect } from 'react';
 import LogoSpeers from "../public/speers.svg";
 import Bar from "../public/_.svg";
 import Eredita from "../public/eredita.svg";
-import Cineplex from "../public/footer_mobile.svg"
+import Cineplex from "../public/cineplex.svg"
 
 function Footer() {
+  
+  const [contentPage, setContentPage] = useContext(AppContext);
+
   return (
     
     <footer className="w-full bg-primary pt-[66px] pl-[46px] md:pt-20 md:pb-8 md:pl-24 md:pr-16 flex flex-col">
@@ -13,8 +18,8 @@ function Footer() {
 
         <div className="flex flex-col">
 
-          <h2 className="mb-8 font-bold text-[20px] leading-6 text-white">
-            SUPPORT
+          <h2 className="mb-8 font-bold text-[20px] leading-6 text-white uppercase">
+            {contentPage?.texts?.[contentPage?.language]?.footer_support}
           </h2>
 
           <div className="flex flex-col space-y-[15px] font-normal text-lg leading-9 text-white mb-[50px]">
@@ -49,26 +54,26 @@ function Footer() {
 
         <div className="flex flex-col">
 
-          <h2 className="mb-8 font-bold text-[20px] leading-6 text-white">
-            TERMS & CONDITIONS
+          <h2 className="mb-8 font-bold text-[20px] leading-6 text-white uppercase">
+            {contentPage?.texts?.[contentPage?.language]?.footer_terms_conditions}
           </h2>
 
           <div className="flex flex-col space-y-[15px] text-white font-normal text-lg leading-9">
 
             <a href="" className="block">
-              Terms of Service
+              {contentPage?.texts?.[contentPage?.language]?.footer_terms_services}
             </a>
 
             <a href="" className="block">
-              Refund Policy
+              {contentPage?.texts?.[contentPage?.language]?.footer_refund}
             </a>
 
             <a href="" className="block">
-              Privacy Policy
+              {contentPage?.texts?.[contentPage?.language]?.footer_privacy}
             </a>
 
             <a href="" className="block">
-              Shipping Policy
+              {contentPage?.texts?.[contentPage?.language]?.footer_shipping}
             </a>
             
           </div>

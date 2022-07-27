@@ -3,8 +3,19 @@ import Bar from "../public/_.svg";
 import Eredita from "../public/eredita.svg";
 import Cineplex from "../public/cineplex.svg";
 import LogoMobile from "../public/logo_header_mobile.svg";
+import {AppContext} from "../helpers/Context";
+import { useContext, useEffect } from 'react';
 
 function Header(){
+
+  const [contentPage, setContentPage] = useContext(AppContext);
+
+  function handleChangeLanguage(language){
+    const newObject = {...contentPage};
+    newObject.language = language;
+    setContentPage(newObject);
+  }
+  
   return (
 
     <header className="w-full flex items-center pt-[30px] md2:pt-[25px] pb-7 justify-between pl-5 md2:pl-[100px] pr-[160px] bg-primary relative">
@@ -30,10 +41,18 @@ function Header(){
       </div>
 
       <div className="absolute top-[15px] right-[21px]">
-        <p className="text-white cursor-pointer text-xs leading-[14px] tracking-[0.145em] uppercase font-normal">
-          <span className="font-black">EN</span> 
+        <p className="text-white text-xs leading-[14px] tracking-[0.145em] uppercase font-normal">
+
+          <span onClick={() => handleChangeLanguage("english")} className={`cursor-pointer ${contentPage?.language == "english" ? 'font-black' : 'font-normal'  } `}>
+            EN
+          </span> 
+
           <span>/</span>
-          <span>FR</span>          
+
+          <span onClick={() => handleChangeLanguage("french")} className={`cursor-pointer ${contentPage?.language == "french" ? 'font-black' : 'font-normal'  } `}>
+            FR
+          </span>          
+
         </p>
       </div>
 

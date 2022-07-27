@@ -1,7 +1,11 @@
 import Image from "next/image";
 import FeaturedImage from "../public/featuredImage.png";
+import {AppContext} from "../helpers/Context";
+import { useContext, useEffect } from 'react';
 
 function FeaturedProduct() {
+
+  const [contentPage, setContentPage] = useContext(AppContext);
 
   return (
 
@@ -16,11 +20,11 @@ function FeaturedProduct() {
           </h2>
 
           <p className="text-white text-center tracking-[0.015em] leading-[19px] max-w-[96.4%] w-full text-base font-normal mb-6">
-            The Origins Bullet 1 Decisive lines and a contemporary design render this model the ideal choice for the man who wants to be noticed. It is available with low-filter lenses, inspired by Hollywood actors (700Y), or with polarised lenses (700P).
+            {contentPage?.texts?.[contentPage?.language]?.spl37_description}
           </p>
 
           <a href="" className="block bg-secondary text-primary py-[13.5px] px-4 uppercase tracking-[0.145em] text-center font-bold mb-[-24px]">
-            PRE-ORDER NOW
+            {contentPage?.texts?.[contentPage?.language]?.spl37_preOrder_text}
           </a>
 
         </div>

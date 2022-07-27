@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {AppContext} from "../helpers/Context";
 import FirstImage from "../public/Rectangle 4290.png";
 
 import Product1 from "../public/1.png";
@@ -18,8 +19,18 @@ import Film from "../public/Film.svg";
 
 import Glass from "../public/VPLE37.png";
 import Badge from "../public/badge_featured.png";
+import { useContext, useEffect } from 'react';
 
 function HeroWithSlider() {
+  
+  const [contentPage, setContentPage] = useContext(AppContext);
+  function handleClick(){
+
+    const newSettings = {...contentPage};
+    newSettings.language = "french";
+    setContentPage(newSettings)
+
+  }
 
   const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
 
@@ -29,7 +40,7 @@ function HeroWithSlider() {
 
       <div className="w-full flex flex-col md2:grid grid-cols-[57.8%_39.3%] gap-x-10">
 
-        <div className="relative h-auto w-full">
+        <div className="relative h-auto w-full" onClick={handleClick}>
 
           <Image
             src={FirstImage}
@@ -67,11 +78,11 @@ function HeroWithSlider() {
           <div className="px-5 md:pr-[0] md:pl-[26px] w-full">
 
             <h2 className="text-black tracking-[0.145em] leading-[22px] text-lg uppercase font-bold mb-2">
-              police lifestyle
+              {contentPage?.texts?.[contentPage?.language]?.reviews_title}
             </h2>
 
             <h1 className="max-w-[354px] italic w-full  tracking-[-0.1em] lg:leading-[56px] leading-[36px] text-[40px] lg:text-[60px] font-normal font-starduster text-primary uppercase mb-2">
-              origins bullet 1
+              {contentPage?.texts?.[contentPage?.language]?.product_name}
             </h1>
 
             <div className="flex items-center space-x-4 mb-8">
@@ -87,13 +98,13 @@ function HeroWithSlider() {
               </div>
 
               <h3 className="text-[#0A0B0E] tracking-[0.2px] leading-7 text-sm font-normal">
-                2 reviews
+                2 {contentPage?.texts?.[contentPage?.language]?.reviews_title}
               </h3>
 
             </div>
 
             <div className="flex flex-col w-full mb-2">
-                <p>Colour</p>
+                <p>{contentPage?.texts?.[contentPage?.language]?.colours_title}</p>
                 <p>Shiny Black</p>
             </div>
 
@@ -125,7 +136,9 @@ function HeroWithSlider() {
 
               <div className="flex items-center space-x-2 max-w-max mx-auto">
 
-                <p className="font-semibold text-sm leading-5 tracking-[0.045em] uppercase text-center text-[#0A0B0E]">FIND YOUR PERFECT FIT IN-STORE</p>
+                <p className="font-semibold text-sm leading-5 tracking-[0.045em] uppercase text-center text-[#0A0B0E]">
+                  {contentPage?.texts?.[contentPage?.language]?.store_locator_button_text}
+                </p>
 
                 <div className="flex flex-col justify-center items-center">
                   <Image src={Location} alt="" layout="intrinsic" />
@@ -136,12 +149,16 @@ function HeroWithSlider() {
             </div>
 
             <div className="w-full py-[15.5px] px-[74px] border border-secondary bg-secondary mb-[30px] cursor-pointer">
-              <p className="font-semibold text-sm leading-5 tracking-[0.045em] uppercase text-center text-[#0A0B0E]">BUY NOW</p>
+              <p className="font-semibold text-sm leading-5 tracking-[0.045em] uppercase text-center text-[#0A0B0E]">
+              {contentPage?.texts?.[contentPage?.language]?.hero_cta_text}
+              </p>
             </div>
 
             <div className="flex items-center justify-between pb-6 border-[#F5F5F5] border-b">
 
-              <h3 className="text-[#111827] tracking-[0.045em] uppercase text-[15px] leading-5 font-black">Description</h3>
+              <h3 className="text-[#111827] tracking-[0.045em] uppercase text-[15px] leading-5 font-black">
+                {contentPage?.texts?.[contentPage?.language]?.description_heading}
+              </h3>
 
               <div className="max-w-max h-3 w-3 flex flex-col justify-center items-center cursor-pointer">
 
@@ -164,7 +181,7 @@ function HeroWithSlider() {
                   <Quality/>
                 </div>
                 <p className="tracking-[0.2px] text-[#0A0B0E] text-base font-base leading-[150%]">
-                  High Quality Acetate
+                  {contentPage?.texts?.[contentPage?.language]?.acetate_icon_text}
                 </p>
               </div>
 
@@ -173,7 +190,7 @@ function HeroWithSlider() {
                   <Aesthetics/>
                 </div>
                 <p className="tracking-[0.2px] text-[#0A0B0E] text-base font-base leading-[150%]">
-                  Bold Aesthetics
+                  {contentPage?.texts?.[contentPage?.language]?.aesthetics_icon_text}
                 </p>
               </div>
 
@@ -182,7 +199,7 @@ function HeroWithSlider() {
                   <Film/>
                 </div>
                 <p className="tracking-[0.2px] text-[#0A0B0E] text-base font-base leading-[150%]">
-                  Worn in “Bullet Train”
+                  {contentPage?.texts?.[contentPage?.language]?.film_icon_text}
                 </p>
               </div>
 
