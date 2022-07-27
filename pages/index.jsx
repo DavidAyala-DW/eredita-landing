@@ -46,14 +46,15 @@ export default function Home({texts}) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+
+  
 
   const dev = process.env.NODE_ENV !== 'production';
   let textObject;
 
-  try {
-
-    const server = dev ? 'http://localhost:3000' : window.origin;
+  try {  
+    const server = dev ? 'http://localhost:3000' : ctx.req.headers.referer;
     const req = await fetch(server + "/settings.json");
     const res = await req.json();
     const {texts} = res;
