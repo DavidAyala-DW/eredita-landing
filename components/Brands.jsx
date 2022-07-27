@@ -24,22 +24,7 @@ import RightArrow from "../public/right_arrow.svg";
 
 const slides = [
 
-  {
-    banner: YaleaBanner,
-    Logo: YaleaLogo,
-  },
-  {
-    banner: PoliceBanner,
-    Logo: PoliceLogo,
-  },
-  {
-    banner: JohnBanner,
-    Logo: JohnLogo,
-  },
-  {
-    banner: LuckyBanner,
-    Logo: LuckyLogo,
-  }
+
 
 ]
 
@@ -75,7 +60,6 @@ function Brands() {
             spaceBetween: 20
           }
 
-
         }}
       >
 
@@ -88,11 +72,13 @@ function Brands() {
 
               <SwiperSlide className="relative" key={i}>
 
-                <Image
-                  src={banner}
-                  alt="Banner"
-                  layout="responsive"
-                />
+                <div className="w-full">
+                  <Image
+                    src={banner}
+                    alt="Banner"
+                    layout="responsive"
+                  />
+                </div>
 
                 <div className="absolute bottom-8  w-full">
                   <div className="relative flex justify-center">
@@ -118,11 +104,6 @@ function Brands() {
         </div>
 
       </Swiper>
-
-      <div className="grid grid-cols">
-
-      </div>
-
 
     </section>
 

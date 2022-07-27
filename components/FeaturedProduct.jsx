@@ -7,7 +7,7 @@ function FeaturedProduct() {
 
     <section className="w-full bg-primary flex flex-col px-5 py-20 md:p-[106px]">
 
-      <div className="w-full mx-auto border border-[#F7F7FB] pt-10 px-5 md:pl-[55px] md:pr-[44px] flex flex-col  md:items-center ">
+      <div className="w-full mx-auto border border-[#F7F7FB] pt-10 px-5 md:pl-[55px] md:pr-[44px] flex flex-col md:flex-row md:items-center ">
 
         <div className="flex flex-col items-center mr-[45px] w-full max-w-max order-2 md:order-1">
 
