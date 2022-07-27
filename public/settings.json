@@ -1,0 +1,51 @@
+{
+  "texts":{
+
+    "english":{
+      "collection_name": "Police Lifestyle",
+      "product_name": "Origins Bullet 1",
+      "reviews_title": "Reviews",
+      "colours_title": "Colour",
+      "store_locator_button_text": "Find your perfect fit in-store",
+      "hero_cta_text": "Buy Now",
+      "description_heading": "Description",
+      "description_content": "Origins Bullet 1 is characterised by a highly recognisable style that can be traced back to the Police collections of the ‘90s. This model is distinguished by two details: a metal plate inserted into the upper part of the front piece and two semi-transparent colour variants that allow for a glimpse of the temple core (880, D87).",
+      "acetate_icon_text": "High Quality Acetate",
+      "aesthetics_icon_text": "Bold Aesthetics",
+      "film_icon_text": "Worn in \"Bullet Train\"",
+      "spl37_description": "The Origins Bullet 1 Decisive lines and a contemporary design render this model the ideal choice for the man who wants to be noticed. It is available with low-filter lenses, inspired by Hollywood actors (700Y), or with polarised lenses (700P).",
+      "spl37_preOrder_text": "Pre-Order Now",
+      "collections_gallery_heading": "Shop More Star Brands",
+      "footer_support": "Support",
+      "footer_terms_conditions": "Terms & Conditions",
+      "footer_terms_services": "Terms of Service",
+      "footer_refund": "Refund Policy",
+      "footer_privacy": "Privacy Policy",
+      "footer_shipping": "Shipping Policy"
+    },
+
+    "french":{
+      "collection_name": "Police Lifestyle",
+      "product_name": "Origins Bullet 1",
+      "reviews_title": "Commentaires",
+      "colours_title": "Coleur",
+      "store_locator_button_text": "Trouver votre modèle parfait en magasin",
+      "hero_cta_text": "Acheter maintenant",
+      "description_heading": "Description",
+      "description_content": "Origins Bullet 1 se caractérise par un style très reconnaissable qui remonte aux collections de la police des années 90. Ce modèle se distingue par deux détails : une plaque métallique insérée dans la partie supérieure de la pièce frontale et deux variantes de couleur semi-transparentes qui permettent un aperçu du noyau de la tempe ",
+      "acetate_icon_text": "acétate de haute qualité",
+      "aesthetics_icon_text": "esthétisme audacieux",
+      "film_icon_text": "porté dans “Bullet Train” ",
+      "spl37_description": "Le Origins Bullet 1 possède des lignes décisives et un design contemporain font de ce modèle le choix idéal pour l’homme qui veut être remarqué. Il est disponible avec des verres à filtre bas, inspirés des acteurs hollywoodiens (700Y), ou avec des verres polarisés (700P).",
+      "spl37_preOrder_text": "Pré-Commandez maintenant",
+      "collections_gallery_heading": "Acheter plus de la marque « Star Brands »",
+      "footer_support": "soutien",
+      "footer_terms_conditions": "Conditions générales",
+      "footer_terms_services": "Conditions de service",
+      "footer_refund": "Politique de remboursement",
+      "footer_privacy": "politique de confidentialité",
+      "footer_shipping": "politique de livraison"
+    }
+
+  }
+}
