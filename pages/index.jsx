@@ -7,12 +7,14 @@ import HeroWithSlider from '../components/HeroWithSlider'
 import {AppContext} from "../helpers/Context";
 
 
-export default function Home({texts}) {
+export default function Home({texts,server}) {
 
   const [contentPage, setContentPage] = useContext(AppContext);
 
   useEffect(() => {    
-    const actualSettings = {texts}
+    console.log(server);
+    const actualSettings = {texts};
+
     if(typeof window !== "undefined"){
 
       if(navigator.language.includes("fr")){
@@ -26,7 +28,7 @@ export default function Home({texts}) {
     setContentPage(actualSettings);
     
     
-  }, [texts,setContentPage]);
+  }, [server,texts,setContentPage]);
 
   useEffect(() => {
     console.log(contentPage);
@@ -54,6 +56,7 @@ export const getServerSideProps = async (ctx) => {
   let server;
 
   try {  
+    
     server = dev ? 'http://localhost:3000' : "https://eredita-landing-test.netlify.app/";
     const req = await fetch(server + "/settings.json");
     const res = await req.json();
@@ -63,13 +66,18 @@ export const getServerSideProps = async (ctx) => {
     }else{
       textObject = texts;
     }    
-
+    
+    if (ctx.req) {
+      server = ctx.req.headers.host // will give you localhost:3000
+    }
+ 
   } catch (error) {
     textObject = {};
   }
   return {
     props:{
-      texts: textObject
+      texts: textObject,
+      server
     }
   }
 }
