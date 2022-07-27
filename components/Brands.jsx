@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import {AppContext} from "../helpers/Context";
-
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
@@ -121,11 +119,11 @@ function Brands() {
           <div className="absolute z-20 top-0 left-0 h-full w-20 bg-brands-left"></div>
           <div className="absolute z-20 top-0 right-0 h-full w-20 bg-brands-right rotate-180"></div>
 
-          <div className="absolute cursor-pointer left-arrow z-30 top-[calc(50%-15px)] left-7 ">          
+          <div className="absolute hidden md:block cursor-pointer left-arrow z-30 top-[calc(50%-15px)] left-7 ">          
             <LeftArrow/>
           </div>
 
-          <div className="absolute cursor-pointer right-arrow z-30 top-[calc(50%-15px)] right-7 ">          
+          <div className="absolute hidden md:block cursor-pointer right-arrow z-30 top-[calc(50%-15px)] right-7 ">          
             <RightArrow/>
           </div>
 

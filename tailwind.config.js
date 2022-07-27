@@ -17,8 +17,26 @@ module.exports = {
       fontFamily:{
         "starduster": ["Starduster Title Italic"]
       },
-    },
+      boxShadow:{
+        "introduction": "0px 2px 6px rgba(151, 172, 198, 0.25)"
+      },
+      keyframes:{
+        bounce2:{
+          "0%, 100%": { transform: "translateY(-15%)",animationTimingFunction: "cubic-bezier(0.8,0,1,1)"},
+          "50%":{transform: "none", animationTimingFunction:"cubic-bezier(0,0,0.2,1)"}
+        },
+        scaleAnimation:{
+          "0%":{transform:"scale(1)"},
+          "100%": {transform:"scale(1.15)"}
+        }
+      },
+      animation: {
+        "arrow": "bounce2 1s infinite",
+        "hoverArrow": "scaleAnimation 0.4s alternate infinite ease-in-out"
+      }
+    },    
     screens: {
+      "3xs": {'min': '390px'},
       "2xs": {'min': '420px'},
       "xs": {'min': '480px'},
       'sm': {'min': '640px'},

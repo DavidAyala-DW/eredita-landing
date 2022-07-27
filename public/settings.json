@@ -2,6 +2,7 @@
   "texts":{
 
     "english":{
+      "shop_movie_text": "shop the movies now",
       "collection_name": "Police Lifestyle",
       "product_name": "Origins Bullet 1",
       "reviews_title": "Reviews",
@@ -25,6 +26,7 @@
     },
 
     "french":{
+      "shop_movie_text": "acheter le films maintenant",
       "collection_name": "Police Lifestyle",
       "product_name": "Origins Bullet 1",
       "reviews_title": "Commentaires",
