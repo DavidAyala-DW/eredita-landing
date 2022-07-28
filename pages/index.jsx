@@ -74,6 +74,10 @@ export const getServerSideProps = async (ctx) => {
 
   try {  
 
+    if (ctx.req) {
+      server = ctx.req.headers.host // will give you localhost:3000
+    }
+
     server = dev ? 'http://localhost:3000' : `https://${server}`;
     const req = await fetch(server + "/settings.json");
     const res = await req.json();
@@ -84,9 +88,6 @@ export const getServerSideProps = async (ctx) => {
       textObject = texts;
     }    
     
-    if (ctx.req) {
-      server = ctx.req.headers.host // will give you localhost:3000
-    }
  
   } catch (error) {
     textObject = {};
