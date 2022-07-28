@@ -29,7 +29,7 @@ export default function Home({texts,server}) {
 
     setContentPage(actualSettings);
     
-    
+    console.log(server);
   }, [server,texts,setContentPage]);
 
   return (
