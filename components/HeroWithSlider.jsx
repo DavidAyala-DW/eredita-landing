@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import {AppContext} from "../helpers/Context";
-import FirstImage from "../public/Rectangle 4290.png";
+import FirstImage from "../public/hero_banner.png";
 
 import Location from "../public/location1.png";
 
@@ -8,7 +8,7 @@ import Less from "../public/less.svg";
 import Plus from "../public/plus.svg";
 
 import Quality from "../public/Acetate.svg";
-import Aesthetics from "../public/BoldAesthetics.svg";
+import Aesthetics from "../public/smart-glasses.svg";
 import Film from "../public/Film.svg";
 
 import Glass from "../public/VPLE37.png";
@@ -26,6 +26,9 @@ import { Navigation, Pagination} from 'swiper';
 
 
 import { useCallback, useContext, useEffect, useState } from 'react';
+
+import LeftArrow from "../public/right_arrow_variant.svg";
+import RightArrow from "../public/right_arrow_variant.svg";
 
 function HeroWithSlider() {
   
@@ -126,7 +129,7 @@ function HeroWithSlider() {
 
     <section className="w-full md2:px-5 xl:px-0 xl:max-w-[85%] xl:mx-auto flex flex-col md:pt-20 pb-16">
 
-      <div className="relative h-[512px] w-full grid md:hidden">
+      <div className="relative h-[512px] w-full grid md2:hidden">
 
         <Image
           src={FirstImage}
@@ -137,7 +140,7 @@ function HeroWithSlider() {
           className="object-cover object-right"
         />
 
-        <div className="absolute w-[90.1%] max-w-[386px] bottom-[30.85%] left-[4.9%]">
+        <div className="absolute w-[90.1%] max-w-[386px] bottom-[30.85%] left-[4.9%] xs:left-[calc(50%-193px)]">
           <Image
             src={Glass}
             alt="Alt"
@@ -148,7 +151,7 @@ function HeroWithSlider() {
           />
         </div>
 
-        <div className="absolute w-[31.54%] max-w-[136px] left-[19.6%] bottom-[58.5%] z-[4]">
+        <div className="absolute w-[31.54%] max-w-[136px] left-[19.6%] xs:left-[calc(51%-68px)] bottom-[58.5%] z-[4]">
           <Image
             src={Badge}
             alt="Alt"
@@ -176,25 +179,37 @@ function HeroWithSlider() {
 
       </div>
 
-      <div className="w-full flex flex-col md2:grid grid-cols-[57.8%_39.3%] gap-x-10">
+      <div className="w-full flex flex-col px-5 md2:grid md2:grid-cols-[57.8%_39.3%] gap-x-10">
 
-        <div className="relative h-auto w-full hidden md:grid">
+        <div className="relative h-auto w-full hidden md2:grid">
 
-          <Image
-            src={FirstImage}
-            alt="Alt text"
-            layout="responsive"
-            quality={100}
-            priority={true}
-          />
+          {
 
-          <div className="absolute max-w-[87%] bottom-[16.6%] left-[6.5%]">
+            activeVariant?.background_image ? (
+
+              <Image
+                src={activeVariant?.background_image}
+                alt="Background Image"
+                layout="responsive"
+                quality={100}
+                priority={true}
+              />
+
+            ) :
+
+            (
+              <div className="h-full w-full bg-white"></div>
+            )
+
+          }
+
+          <div className="absolute swiperGallery max-w-[87%] bottom-[16.6%] left-[6.5%]">
 
             <Swiper 
               modules={[Pagination]}
               speed={300}
               spaceBetween={20}
-              className="w-full flex relative !z-[3]"
+              className="w-full relative !z-[3] !grid grid-flow-col h-auto"
               slides={activeGallery.length}
               onSwiper={setSwiperGallery2}
               slidesPerView={1}
@@ -206,14 +221,14 @@ function HeroWithSlider() {
 
                   return (
 
-                    <SwiperSlide className="w-full z-[3] flex justify-center" key={i}>
+                    <SwiperSlide className="w-full min-h-[303px] z-[3] flex justify-center h-auto" key={i}>
                       <Image
                         src={slide}
                         alt="Alt"
                         layout="intrinsic"
                         quality={100}
                         priority={true}
-                        className="z-[3] mx-auto"
+                        className="z-[3] mx-auto h-full object-contain"
                       />
                     </SwiperSlide>
 
@@ -227,7 +242,7 @@ function HeroWithSlider() {
 
           </div>
 
-          <div className="absolute max-w-[24.2%] left-[24%] md:left-[unset] md:right-[18%] bottom-[50%] md:bottom-[39%] z-[4] md:z-[2]">
+          <div className="absolute max-w-[24.2%] left-[24%] md2:left-[unset] md2:right-[18%] bottom-[50%] md2:bottom-[39%] z-[4] md2:z-[2]">
             <Image
               src={Badge}
               alt="Alt"
@@ -239,15 +254,15 @@ function HeroWithSlider() {
 
         </div>
 
-        <div className="flex flex-col items-center md:items-start h-auto pt-10 md:pt-0 product-content">
+        <div className="flex flex-col items-center md2:items-start h-auto pt-10 md2:pt-0 product-content">
 
-          <div className="px-5 md:pr-[0] md:pl-[26px] w-full flex flex-col items-center md:items-start">
+          <div className="px-5 md2:pr-[0] md2:pl-[26px] w-full flex flex-col items-center md2:items-start">
 
             <h2 className="text-black tracking-[0.145em] leading-[22px] text-lg uppercase font-bold mb-2">
               {contentPage?.texts?.[contentPage?.language]?.collection_name}
             </h2>
 
-            <h1 className="max-w-[354px] text-center md:text-left italic w-full tracking-[-0.1em] 3xs:leading-[56px] leading-[36px] text-[50px] 3xs:text-[60px] font-normal font-starduster text-primary uppercase mb-2">
+            <h1 className="max-w-[354px] text-center md2:text-left italic w-full tracking-[-0.1em] 3xs:leading-[56px] leading-[36px] text-[50px] 3xs:text-[60px] font-normal font-starduster text-primary uppercase mb-2">
               {contentPage?.texts?.[contentPage?.language]?.product_name}
             </h1>
 
@@ -269,13 +284,14 @@ function HeroWithSlider() {
 
             </div>
 
-            <div className="w-full relative block md:hidden">
+            <div className="w-full swiperVariants relative block md2:hidden mb-5">
 
               <Swiper 
+
                 modules={[Pagination]}
                 speed={300}
                 spaceBetween={20}
-                className="w-full flex relative cursor-pointer"
+                className="w-full flex relative cursor-pointer !pb-2.5"
                 slides={activeGallery.length}
                 onSwiper={setSwiperGallery}
                 slidesPerView={1}
@@ -288,7 +304,7 @@ function HeroWithSlider() {
 
                     return (
 
-                      <SwiperSlide className="cursor-pointer" key={i}>
+                      <SwiperSlide className="cursor-pointer flex justify-center" key={i}>
                         <Image
                           src={slide}
                           alt="slide"
@@ -310,11 +326,24 @@ function HeroWithSlider() {
               <p>{activeVariant?.color}</p>
             </div>
 
-            <div className="flex mb-8 w-full">
+            <div className="flex mb-8 w-full relative swiper-products">
+
+              <div className="absolute md:hidden rotate-180 cursor-pointer left-arrow-variant z-30 top-[-50px] right-[50px]">          
+                <LeftArrow/>
+              </div>
+
+              <div className="absolute md:hidden cursor-pointer right-arrow-variant z-30 top-[-50px] right-0">          
+                <RightArrow/>
+              </div>
 
               <Swiper 
                 speed={300}
                 spaceBetween={20}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: '.left-arrow-variant',
+                  nextEl: '.right-arrow-variant',
+                }}
                 className="w-full flex relative cursor-pointer"
                 breakpoints = {{
 
@@ -330,21 +359,28 @@ function HeroWithSlider() {
                 }}
               >
 
-                {variants.map((variant,i) => {;
-                  const {handle,image} = variant;
-                  return(
-                    <SwiperSlide className="w-full" key={i}>
-                      <div
-                        data-handle={handle}
-                        onClick={() => handleChangeVariant(handle)}
-                        className={`pb-4 variant w-full relative after:absolute after:w-full after:h-[1.5px] ${activeVariant.handle == handle ? 'after:bg-black' : 'after:bg-[#B6B6B6]' } after:bottom-0 after:left-0`}
-                      >
-                        <Image src={image} alt={"alt"} quality={100} layout="responsive" />
-                      </div>
-                  </SwiperSlide>
-                  )
+                {
+                  variants.map((variant,i) => {
 
-                })}
+                    const {handle,image} = variant;
+                    return(
+
+                      <SwiperSlide className="w-full" key={i}>
+
+                        <div
+                          data-handle={handle}
+                          onClick={() => handleChangeVariant(handle)}
+                          className={`pb-4 variant w-full relative after:absolute after:w-full after:h-[1.5px] ${activeVariant.handle == handle ? 'after:bg-black' : 'after:bg-[#B6B6B6]' } after:bottom-0 after:left-0`}
+                        >
+                          <Image src={image} alt={"alt"} quality={100} layout="responsive" />
+                        </div>
+
+                      </SwiperSlide>
+
+                    )
+
+                  })
+                }
 
               </Swiper>
 

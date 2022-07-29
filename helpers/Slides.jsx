@@ -1,5 +1,8 @@
-import Slide1 from "../public/Rectangle4314.png";
-import Slide2 from "../public/VPLE37.png";
+import Slide from "../public/img_bluehavana.png";
+import Slide1 from "../public/VPLE37.png";
+import Slide2 from "../public/img_tortoise.png";
+import Slide3 from "../public/img_tortoise_2.png";
+import Slide4 from "../public/img_tortoise_2__2.png";
 
 export const galleries = [
 
@@ -7,10 +10,10 @@ export const galleries = [
     handle: "slide1",
     slides:[
       Slide1,
-      Slide2,
+      Slide,
+      Slide,
       Slide1,
-      Slide2,
-      Slide1,
+      Slide,
     ]
   },
   
@@ -18,34 +21,27 @@ export const galleries = [
     handle: "slide2",
     slides:[
       Slide2,
-      Slide1,
       Slide2,
-      Slide1,
+      Slide2,
+      Slide2
     ]
   },
 
   {
     handle: "slide3",
     slides:[
-      Slide1,
-      Slide2,
-      Slide2,
+      Slide3,
+      Slide3,
+      Slide3,
     ]
   },
 
   {
     handle: "slide4",
     slides:[
-      Slide2,
-      Slide1,
+      Slide4,
+      Slide4,
     ]
-  },
-
-  {
-    handle: "slide5",
-    slides:[
-      Slide1,
-    ]
-  },
+  }
 
 ]

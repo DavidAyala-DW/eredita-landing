@@ -1,39 +1,35 @@
-import Product1 from "../public/1.png";
-import Product2 from "../public/2.png";
-import Product3 from "../public/3.png";
-import Product4 from "../public/4.png";
+import Product1 from "../public/product1.png";
+import Product2 from "../public/product2.png";
+import Product3 from "../public/product3.png";
+import Product4 from "../public/product4.png";
 import Product5 from "../public/5.png";
+import FirstImage from "../public/hero_banner.png";
 
 export const allVariants = [
 
   {
     handle: "slide1",
     image: Product1,
-    color: "Shiny Black"
+    color: "Blue Havana",
+    background_image: FirstImage
   },
 
   {
     handle: "slide2",
     image: Product2,
-    color: "Shiny Black2"
+    color: "Tortoise"
   },
 
   {
     handle: "slide3",
     image: Product3,
-    color: "Shiny Black3"
+    color: "Black"
   },
 
   {
     handle: "slide4",
     image: Product4,
-    color: "Shiny Black 4"
+    color: "Shiny Black"
   },
-
-  {
-    handle: "slide5",
-    image: Product5,
-    color: "Shiny Black 5"
-  },
-
+  
 ]

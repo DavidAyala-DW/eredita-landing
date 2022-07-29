@@ -2,10 +2,8 @@ import Image from "next/image";
 import {AppContext} from "../helpers/Context";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 
 import { Navigation } from "swiper";
-
 
 import YaleaBanner from "../public/yalea_banner.png";
 import YaleaLogo from "../public/yalea_logo.svg";
@@ -101,6 +99,7 @@ function Brands() {
                       src={banner}
                       alt="Banner"
                       layout="responsive"
+                      quality={100}
                     />
                   </div>
 
