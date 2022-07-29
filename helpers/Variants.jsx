@@ -3,7 +3,6 @@ import Product2 from "../public/product2.png";
 import Product3 from "../public/product3.png";
 import Product4 from "../public/product4.png";
 import Product5 from "../public/5.png";
-import FirstImage from "../public/hero_banner.png";
 
 export const allVariants = [
 
@@ -11,7 +10,6 @@ export const allVariants = [
     handle: "slide1",
     image: Product1,
     color: "Blue Havana",
-    background_image: FirstImage
   },
 
   {

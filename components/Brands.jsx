@@ -104,7 +104,7 @@ function Brands() {
                   </div>
 
                   <div className="absolute bottom-8  w-full">
-                    <div className="relative flex justify-center">
+                    <div className="relative w-full max-w-[80%] mx-auto flex justify-center">
                       <Logo/>
                     </div>
                   </div>

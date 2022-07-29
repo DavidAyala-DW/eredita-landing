@@ -30,14 +30,17 @@ import { useCallback, useContext, useEffect, useState } from 'react';
 import LeftArrow from "../public/right_arrow_variant.svg";
 import RightArrow from "../public/right_arrow_variant.svg";
 
+
 function HeroWithSlider() {
   
   const [contentPage, setContentPage] = useContext(AppContext);
   const [variants,setVariants] = useState([]);
   const [activeGallery, setActiveGallery] = useState([]);
+  const [isFirstGallery, setIsFirstGallery] = useState(false);
   const [activeVariant, setActiveVariant] = useState(null);
   const [swiperGallery, setSwiperGallery] = useState(null);
   const [swiperGallery2, setSwiperGallery2] = useState(null);
+  const [realIndexGallery, setRealIndexGallery] = useState(0);
 
   const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
 
@@ -100,10 +103,12 @@ function HeroWithSlider() {
 
   }, [swiperGallery,activeGallery,swiperGallery2])
 
+
   const handleChangeVariant = useCallback((handle) => {
 
     const array_of_slides = galleries.find(slide => slide.handle == handle);
-    const {slides} = array_of_slides;
+    const {slides, handle:Handle } = array_of_slides;
+    setIsFirstGallery((Handle == "slide1"));
     setActiveVariant(allVariants.find(variant => variant.handle == handle));
     
     if(slides?.length){
@@ -123,7 +128,12 @@ function HeroWithSlider() {
 
   useEffect(() => {
     setVariants(allVariants);
-  }, []);
+    if(swiperGallery2?.__swiper__){
+      swiperGallery2.on("slideChange",e => {
+        setRealIndexGallery(e.realIndex)
+      })
+    }    
+  }, [swiperGallery2]);
 
   return (
 
@@ -185,10 +195,10 @@ function HeroWithSlider() {
 
           {
 
-            activeVariant?.background_image ? (
+            isFirstGallery && realIndexGallery == 0 ? (
 
               <Image
-                src={activeVariant?.background_image}
+                src={FirstImage}
                 alt="Background Image"
                 layout="responsive"
                 quality={100}
@@ -291,7 +301,7 @@ function HeroWithSlider() {
                 modules={[Pagination]}
                 speed={300}
                 spaceBetween={20}
-                className="w-full flex relative cursor-pointer !pb-2.5"
+                className="w-full flex relative cursor-pointer !pb-4"
                 slides={activeGallery.length}
                 onSwiper={setSwiperGallery}
                 slidesPerView={1}
