@@ -111,7 +111,7 @@ function Brands() {
                     />
                   </div>
 
-                  <div className="absolute bottom-8  w-full">
+                  <div className="absolute bottom-0 h-[100px] flex-col justify-center  w-full min-h-[25px] flex">
 
                     <style jsx>{`
 
